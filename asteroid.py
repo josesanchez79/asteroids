@@ -3,7 +3,7 @@ import random
 from circleshape import *
 from constants import *
 
-
+#class constructor
 class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
@@ -14,6 +14,7 @@ class Asteroid(CircleShape):
     def update(self, dt):
         self.position += (self.velocity * dt)
 
+    #method to handle small, medium and large asteroids
     def split(self):
         pygame.sprite.Sprite.kill(self)
         if self.radius <= ASTEROID_MIN_RADIUS:
