@@ -47,7 +47,7 @@ def main():
         for obj in asteroids:
             for objs in shots:
                 if obj.collision(objs):
-                    pygame.sprite.Sprite.kill(obj)
+                    obj.split()
                     pygame.sprite.Sprite.kill(objs)
         
         for shot in shots:
