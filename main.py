@@ -44,6 +44,12 @@ def main():
                 print("Game over!")
                 sys.exit()
         
+        for obj in asteroids:
+            for objs in shots:
+                if obj.collision(objs):
+                    pygame.sprite.Sprite.kill(obj)
+                    pygame.sprite.Sprite.kill(objs)
+        
         for shot in shots:
             shot.update(dt)  
             shot.draw(screen)
